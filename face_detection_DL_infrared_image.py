@@ -5,7 +5,7 @@ def fahrenheit2celcius(f):
     return (f - 32) * 5 / 9
 
 # hangi fotoğrafın üzerinde çalışacağız
-name = "IR_00197"
+name = "IR_00191"
 # csv dosyasının ismini oluşturalım
 csv_file = f'temperature/{name}{".csv"}'
 # Fluke Thermal Imager tarafından bize sağlanan sıcaklık haritası 240x320 CCD boyutunda
