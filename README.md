@@ -11,5 +11,5 @@
 
 <figure>
 <img src="result/IR_00135_RGB_infrared_faces_fever.jpg" alt="fever detection on street kids' infarrd image" width="%100" height=auto></a>
-<figcaption align="justify">(a) Visible light (RGB) image. (b) Infrared Image. (c) DL based face detector results on visible light image. (d) Fever detection on infrared image by using detected faces in visible light image. As Fluke Thermal Imager provides temperature values of pixels directly, maximum temperature values in corresponding face regions are extracted and thresholded to achieve fever detection on infrared images.</figcaption>
+<figcaption align="justify">(a) Visible light (RGB) image. (b) Infrared Image. (c) DL based face detector results on visible light image. (d) Fever detection on infrared image by using detected faces in visible light image. As Fluke Thermal Imager provides temperature values of pixels directly, maximum temperature values in corresponding face regions are extracted and thresholded to achieve fever detection.</figcaption>
 </figure>
