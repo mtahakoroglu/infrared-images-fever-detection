@@ -1,10 +1,11 @@
 import cv2
 import numpy as np
 
-img1name = "./../image/IR_00135_RGB.png"
-img2name = "./../image/IR_00135.png"
-img3name = "IR_00135_RGB_face_detection.jpg"
-img4name = "IR_00135_fever_detection.jpg"
+name = "IR_00268"
+img1name = f"./../image/{name}_RGB.png"
+img2name = f"./../image/{name}.png"
+img3name = f"{name}_RGB_face_detection.jpg"
+img4name = f"{name}_fever_detection.jpg"
 img1 = cv2.imread(img1name)
 img2 = cv2.imread(img2name)
 img3 = cv2.imread(img3name)

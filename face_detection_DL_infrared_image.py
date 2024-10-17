@@ -5,7 +5,7 @@ def fahrenheit2celcius(f):
     return (f - 32) * 5 / 9
 
 # hangi fotoğrafın üzerinde çalışacağız
-name = "IR_00191"
+name = "IR_00288"
 # csv dosyasının ismini oluşturalım
 csv_file = f'temperature/{name}{".csv"}'
 # Fluke Thermal Imager tarafından bize sağlanan sıcaklık haritası 240x320 CCD boyutunda
@@ -19,7 +19,7 @@ print(temperature)
 print("[BİLGİ] derin öğrenme modeli yükleniyor...")
 # dnn deep neural network
 net = cv2.dnn.readNetFromCaffe('deploy.prototxt.txt', 'res10_300x300_ssd_iter_140000.caffemodel')
-conf = 0.3 # minimum probability to filter weak detections
+conf = 0.5 # minimum probability to filter weak detections
 # load the input image and construct an input blob for the image
 # by resizing to a fixed 300x300 pixels and then normalizing it
 img_name, img_extension = f"{name}_RGB", "png"
@@ -63,10 +63,10 @@ for i in range(0, detections.shape[2]):
 		max_temperature.append(fahrenheit2celcius(np.max(ROI)))
 		text = f"{max_temperature[i]:.2f} C"
 		y = startY - 10 if startY - 10 > 10 else startY + 10
-		color = (255, 255, 255)
-		cv2.rectangle(img_thermal_imager_ccd, (startX, startY), (endX, endY), color, 2)
-		cv2.putText(img_thermal_imager_ccd, text, (startX+1, y-1), 0, 0.5, color, 1)
-		cv2.circle(img_thermal_imager_ccd, (startX+50,startY-20), 2, color, 1, 0)
+		BLACK, WHITE = (0, 0, 0), (255, 255, 255)
+		cv2.rectangle(img_thermal_imager_ccd, (startX, startY), (endX, endY), WHITE, 2)
+		cv2.putText(img_thermal_imager_ccd, text, (startX+1, y-1), 0, 0.5, WHITE, 1)
+		cv2.circle(img_thermal_imager_ccd, (startX+50,startY-20), 2, WHITE, 1, 0)
 # save output image
 cv2.imwrite(f"result/{infrared_img_name}_thermal_imager_face_detection_CCD.jpg", img_thermal_imager_ccd, [cv2.IMWRITE_JPEG_QUALITY, 100])
 
@@ -98,14 +98,14 @@ for i in range(0, detections.shape[2]):
 		# draw the bounding box of the face along with the associated probability
 		text = f"{max_temperature[i]:.2f} C"
 		y = startY - 10 if startY - 10 > 10 else startY + 10
-		color = (255, 255, 255)
+		BLACK = (0, 0, 0)
 		GREEN = (0, 255, 0)
 		cv2.rectangle(img_rgb, (startX, startY), (endX, endY), GREEN, 6)
-		cv2.rectangle(img_infrared, (startX, startY), (endX, endY), color, 6)
-		cv2.putText(img_infrared, text, (startX+5, y-15), 0, 1.5, color, 3)
-		cv2.circle(img_infrared, (startX+150,startY-55), 5, color, 4, 0)
+		cv2.rectangle(img_infrared, (startX, startY), (endX, endY), WHITE, 6)
+		cv2.putText(img_infrared, text, (startX+5, y-15), 0, 1.5, WHITE, 3)
+		cv2.circle(img_infrared, (startX+150,startY-55), 5, WHITE, 4, 0)
 		if max_temperature[i] > threshold_temperature:
-			cv2.putText(img_infrared, "Fever detection!", (startX-75, y-65), 0, 1.5, color, 3)
+			cv2.putText(img_infrared, "Fever detection!", (startX-75, y-65), 0, 1.5, WHITE, 3)
 # save output image
 cv2.imwrite(f"result/{infrared_img_name}_fever_detection.jpg", img_infrared, [cv2.IMWRITE_JPEG_QUALITY, 100])
 cv2.imwrite(f"result/{img_name}_face_detection.jpg", img_rgb, [cv2.IMWRITE_JPEG_QUALITY, 100])
