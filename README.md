@@ -11,6 +11,8 @@
 
 <h4>Some Results (Bazı Sonuçlar)</h4>
 
+<p align="justify">Aşağıdaki sonuç 640x480'lik (2mp) bir resme aittir. Bunun için yaptığımız değişikleri anlattığımız videoyu izlemek için <a href="https://youtu.be/hsg-7qui8Hg">tıklayın</a>.</p>
+
 <figure>
 <img src="result/IR_00121_RGB_infrared_faces_fever.jpg" alt="fever detection on the image" width="%100" height=auto></a>
 <figcaption align="justify">(a) Görünürür ışık spektrumunda (RGB) fotoğraf. (b) Kızılötesi (termal) görüntü. (c) RGB resim üzerinde Derin Öğrenme tabanlı yüz tespiti. (d) RGB resim üzerinde tespit edilen yüz bölgelerinin termal resim üzerine aktarılarak orada ilgilenilen bölgede (region of interest - ROI) ateş tespitinin yapılması.</figcaption>
