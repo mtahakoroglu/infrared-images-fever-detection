@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-name = "IR_00268"
+name = "IR_00265"
 img1name = f"./../image/{name}_RGB.png"
 img2name = f"./../image/{name}.png"
 img3name = f"{name}_RGB_face_detection.jpg"
