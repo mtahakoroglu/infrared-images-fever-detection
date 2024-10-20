@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-name = "IR_00191"
+name = "IR_00121"
 img1name = f"./../image/{name}_RGB.png"
 img2name = f"./../image/{name}.png"
 img3name = f"{name}_RGB_face_detection.jpg"
@@ -26,7 +26,10 @@ while True:
 
 h, w, c = img1.shape
 # insert (a) (b) (c) (d) on upper right of the images
-xshift, yshift, fontType, fontScale, color, thickness = 150, 100, 0, 2, (255,255,255), 6
+if w == 1280:
+    xshift, yshift, fontType, fontScale, color, thickness = 150, 100, 0, 2, (255,255,255), 6
+elif w == 640:
+    xshift, yshift, fontType, fontScale, color, thickness = 60, 50, 0, 1, (255,255,255), 3
 img1 = cv2.putText(img1, "(a)", (w-xshift, yshift), fontType, fontScale, color, thickness, 0)
 img2 = cv2.putText(img2, "(b)", (w-xshift, yshift), fontType, fontScale, color, thickness, 0)
 img3 = cv2.putText(img3, "(c)", (w-xshift, yshift), fontType, fontScale, color, thickness, 0)

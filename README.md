@@ -1,4 +1,5 @@
-<h2>Fever Detection on Infrared Images</h2>
+<h2>Termal Resimlerde Ateşli Hasta Tespiti (Fever Detection on Infrared Images)</h2>
+<p>Burada direkt termal resim üzerinde çalışmıyoruz. Yaptığımız şey (1)termal resimlerdeki yüz bölgelerini aynı sahneye tekabül eden görünebilir ışık spektrumu resminde OpenCV'de yer alan derin öğrenme tabanlı bir yüz tespiti metoduyla tespit etmek, (2) bu bölgeleri termal resim üzerinde göstermek, (3) yüz bölgelerindeki en yüksek sıcaklığı bulup belli bir eşik değerinden (e.g., 35<sup>o</sup>) fazla iseler tespit edilen yüzlerin üzerine veya altına ateşli hasta (fever detection) yazdırmak.</p>
 
 <figure>
 <img src="result/IR_00135_RGB_infrared_faces_fever.jpg" alt="fever detection on the image" width="%100" height=auto></a>

@@ -5,7 +5,7 @@ def fahrenheit2celcius(f):
     return (f - 32) * 5 / 9
 
 # hangi fotoğrafın üzerinde çalışacağız
-name = "IR_00191"
+name = "IR_00121"
 # csv dosyasının ismini oluşturalım
 csv_file = f'temperature/{name}{".csv"}'
 # Fluke Thermal Imager tarafından bize sağlanan sıcaklık haritası 240x320 CCD boyutunda
@@ -103,13 +103,16 @@ for i in range(0, detections.shape[2]):
 		GREEN = (0, 255, 0)
 		cv2.rectangle(img_rgb, (startX, startY), (endX, endY), GREEN, 6)
 		cv2.rectangle(img_infrared, (startX, startY), (endX, endY), WHITE, 6)
-		cv2.putText(img_infrared, text, (startX+5, y-15), 0, 1.5, WHITE, 3)
-		cv2.circle(img_infrared, (startX+150,startY-55), 5, WHITE, 4, 0)
-		if max_temperature[i] > threshold_temperature:
-			if img_rgb.shape[1] == 1280:
+		if img_rgb.shape[1] == 1280:
+			cv2.putText(img_infrared, text, (startX+5, y-15), 0, 1.5, WHITE, 3)
+			cv2.circle(img_infrared, (startX+150,startY-55), 5, WHITE, 4, 0)
+			if max_temperature[i] > threshold_temperature:
 				cv2.putText(img_infrared, "Fever detection!", (startX-75, y-65), 0, 1.5, WHITE, 3)
-			elif img_rgb.shape[1] == 640:
-				cv2.putText(img_infrared, "Fever detection!", (startX-75, endY+65), 0, 1.5, WHITE, 3)
+		elif img_rgb.shape[1] == 640:
+			cv2.putText(img_infrared, text, (startX+18, y-15), 0, 1, WHITE, 2)
+			cv2.circle(img_infrared, (startX+150,startY-50), 3, WHITE, 2, 0)
+			if max_temperature[i] > threshold_temperature:
+				cv2.putText(img_infrared, "Fever detection!", (startX-12, endY+35), 0, 1, WHITE, 2)
 # save output image
 cv2.imwrite(f"result/{infrared_img_name}_fever_detection.jpg", img_infrared, [cv2.IMWRITE_JPEG_QUALITY, 100])
 cv2.imwrite(f"result/{img_name}_face_detection.jpg", img_rgb, [cv2.IMWRITE_JPEG_QUALITY, 100])
