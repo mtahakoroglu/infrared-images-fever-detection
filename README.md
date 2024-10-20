@@ -18,6 +18,18 @@
 <figcaption align="justify">(a) Görünürür ışık spektrumunda (RGB) fotoğraf. (b) Kızılötesi (termal) görüntü. (c) RGB resim üzerinde Derin Öğrenme tabanlı yüz tespiti. (d) RGB resim üzerinde tespit edilen yüz bölgelerinin termal resim üzerine aktarılarak orada ilgilenilen bölgede (region of interest - ROI) ateş tespitinin yapılması.</figcaption>
 </figure>
 
+<h5>Baş Eğildikçe Yüz Sıcaklığının Artması</h5>
+
+<figure>
+<img src="result/IR_00191_RGB_infrared_faces_fever.jpg" alt="fever detection on the image" width="%100" height=auto></a>
+<figcaption align="justify">(a) Görünürür ışık spektrumunda (RGB) fotoğraf. (b) Kızılötesi (termal) görüntü. (c) RGB resim üzerinde Derin Öğrenme tabanlı yüz tespiti. (d) RGB resim üzerinde tespit edilen yüz bölgelerinin termal resim üzerine aktarılarak orada ilgilenilen bölgede (region of interest - ROI) ateş tespitinin yapılması.</figcaption>
+</figure>
+
+<figure>
+<img src="result/IR_00192_RGB_infrared_faces_fever.jpg" alt="fever detection on the image" width="%100" height=auto></a>
+<figcaption align="justify">(a) Görünürür ışık spektrumunda (RGB) fotoğraf. (b) Kızılötesi (termal) görüntü. (c) RGB resim üzerinde Derin Öğrenme tabanlı yüz tespiti. (d) RGB resim üzerinde tespit edilen yüz bölgelerinin termal resim üzerine aktarılarak orada ilgilenilen bölgede (region of interest - ROI) ateş tespitinin yapılması.</figcaption>
+</figure>
+
 <h3>References</h3>
 <ol>
     <li align="justify">https://pyimagesearch.com/2022/10/10/introduction-to-infrared-vision-near-vs-mid-far-infrared-images/</li>

@@ -5,7 +5,7 @@ def fahrenheit2celcius(f):
     return (f - 32) * 5 / 9
 
 # hangi fotoğrafın üzerinde çalışacağız
-name = "IR_00121"
+name = "IR_00191"
 # csv dosyasının ismini oluşturalım
 csv_file = f'temperature/{name}{".csv"}'
 # Fluke Thermal Imager tarafından bize sağlanan sıcaklık haritası 240x320 CCD boyutunda
@@ -116,10 +116,10 @@ cv2.imwrite(f"result/{img_name}_face_detection.jpg", img_rgb, [cv2.IMWRITE_JPEG_
 # show the output image
 if img_rgb.shape[1] == 1280:
 	s = 0.5
-elif img_rgb.shape[1] == 640:
-	s = 1
-cv2.imshow("Face & fever detection on 640x480 image", img_infrared)
-rimage = cv2.resize(img_infrared, (int(s*img_infrared.shape[1]), 
+	rimage = cv2.resize(img_infrared, (int(s*img_infrared.shape[1]), 
 												 int(s*img_infrared.shape[0])), cv2.INTER_LINEAR)
-cv2.imshow("Face & fever detection on 5mp image", rimage)
+	cv2.imshow("Face & fever detection on 5mp (1280x958) image", rimage)
+elif img_rgb.shape[1] == 640:
+	s = 1.0
+	cv2.imshow("Face & fever detection on 2mp (640x480) image", img_infrared)
 cv2.waitKey(0)
