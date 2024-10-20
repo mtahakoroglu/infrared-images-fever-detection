@@ -5,7 +5,7 @@ def fahrenheit2celcius(f):
     return (f - 32) * 5 / 9
 
 # hangi fotoğrafın üzerinde çalışacağız
-name = "IR_00265"
+name = "IR_00121"
 # csv dosyasının ismini oluşturalım
 csv_file = f'temperature/{name}{".csv"}'
 # Fluke Thermal Imager tarafından bize sağlanan sıcaklık haritası 240x320 CCD boyutunda
@@ -25,6 +25,7 @@ conf = 0.5 # minimum probability to filter weak detections
 img_name, img_extension = f"{name}_RGB", "png"
 infrared_img_name, infrared_img_extension = name, "png"
 img_rgb = cv2.imread(f'image/{img_name}.{img_extension}')
+print(f"img_rgb shape: {img_rgb.shape}")
 img_infrared = cv2.imread(f'image/{infrared_img_name}.{infrared_img_extension}')
 img_infrared_clone = img_infrared.copy()
 # save output image as 320 x 240 as thermal matrix is at this size.
@@ -105,12 +106,19 @@ for i in range(0, detections.shape[2]):
 		cv2.putText(img_infrared, text, (startX+5, y-15), 0, 1.5, WHITE, 3)
 		cv2.circle(img_infrared, (startX+150,startY-55), 5, WHITE, 4, 0)
 		if max_temperature[i] > threshold_temperature:
-			cv2.putText(img_infrared, "Fever detection!", (startX-75, y-65), 0, 1.5, WHITE, 3)
+			if img_rgb.shape[1] == 1280:
+				cv2.putText(img_infrared, "Fever detection!", (startX-75, y-65), 0, 1.5, WHITE, 3)
+			elif img_rgb.shape[1] == 640:
+				cv2.putText(img_infrared, "Fever detection!", (startX-75, endY+65), 0, 1.5, WHITE, 3)
 # save output image
 cv2.imwrite(f"result/{infrared_img_name}_fever_detection.jpg", img_infrared, [cv2.IMWRITE_JPEG_QUALITY, 100])
 cv2.imwrite(f"result/{img_name}_face_detection.jpg", img_rgb, [cv2.IMWRITE_JPEG_QUALITY, 100])
 # show the output image
-s = 0.5
+if img_rgb.shape[1] == 1280:
+	s = 0.5
+elif img_rgb.shape[1] == 640:
+	s = 1
+cv2.imshow("Face & fever detection on 640x480 image", img_infrared)
 rimage = cv2.resize(img_infrared, (int(s*img_infrared.shape[1]), 
 												 int(s*img_infrared.shape[0])), cv2.INTER_LINEAR)
 cv2.imshow("Face & fever detection on 5mp image", rimage)

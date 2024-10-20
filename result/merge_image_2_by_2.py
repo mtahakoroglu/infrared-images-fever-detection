@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-name = "IR_00265"
+name = "IR_00121"
 img1name = f"./../image/{name}_RGB.png"
 img2name = f"./../image/{name}.png"
 img3name = f"{name}_RGB_face_detection.jpg"
@@ -39,7 +39,7 @@ img[h:2*h,0:w,:] = img3
 img[h:2*h,w:2*w,:] = img4
 
 # resize image to display on screen
-s = 0.3
+s = 0.5
 rimg = cv2.resize(img, (int(s*img.shape[1]), int(s*img.shape[0])), 0)
 cv2.imshow("Merged image", rimg)
 cv2.waitKey(0)
