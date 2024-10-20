@@ -1,5 +1,5 @@
 <h2>Termal Resimlerde Ateşli Hasta Tespiti (Fever Detection on Infrared Images)</h2>
-<p>Burada direkt termal resim üzerinde çalışmıyoruz. Yaptığımız şey (1)termal resimlerdeki yüz bölgelerini aynı sahneye tekabül eden görünebilir ışık spektrumu resminde OpenCV'de yer alan derin öğrenme tabanlı bir yüz tespiti metoduyla tespit etmek, (2) bu bölgeleri termal resim üzerinde göstermek, (3) yüz bölgelerindeki en yüksek sıcaklığı bulup belli bir eşik değerinden (e.g., 35<sup>o</sup>) fazla iseler tespit edilen yüzlerin üzerine veya altına ateşli hasta (fever detection) yazdırmak.</p>
+<p align="justify">Burada direkt termal resim üzerinde çalışmıyoruz. Yaptığımız şey (1) termal resimlerdeki yüz bölgelerini aynı sahneye tekabül eden görünebilir ışık spektrumu resminde OpenCV'de yer alan derin öğrenme tabanlı bir yüz tespiti metoduyla tespit etmek, (2) bu bölgeleri termal resim üzerinde göstermek, (3) yüz bölgelerindeki en yüksek sıcaklığı bulup belli bir eşik değerinden (e.g., 35<sup>o</sup>) fazla iseler tespit edilen yüzlerin üzerine veya altına ateşli hasta (fever detection) yazdırmak.</p>
 
 <figure>
 <img src="result/IR_00135_RGB_infrared_faces_fever.jpg" alt="fever detection on the image" width="%100" height=auto></a>
@@ -16,6 +16,11 @@
 
 <figure>
 <img src="result/IR_00121_RGB_infrared_faces_fever.jpg" alt="fever detection on the image" width="%100" height=auto></a>
+<figcaption align="justify">(a) Görünürür ışık spektrumunda (RGB) fotoğraf. (b) Kızılötesi (termal) görüntü. (c) RGB resim üzerinde Derin Öğrenme tabanlı yüz tespiti. (d) RGB resim üzerinde tespit edilen yüz bölgelerinin termal resim üzerine aktarılarak orada ilgilenilen bölgede (region of interest - ROI) ateş tespitinin yapılması.</figcaption>
+</figure>
+
+<figure>
+<img src="result/IR_00065_RGB_infrared_faces_fever.jpg" alt="fever detection on the image" width="%100" height=auto></a>
 <figcaption align="justify">(a) Görünürür ışık spektrumunda (RGB) fotoğraf. (b) Kızılötesi (termal) görüntü. (c) RGB resim üzerinde Derin Öğrenme tabanlı yüz tespiti. (d) RGB resim üzerinde tespit edilen yüz bölgelerinin termal resim üzerine aktarılarak orada ilgilenilen bölgede (region of interest - ROI) ateş tespitinin yapılması.</figcaption>
 </figure>
 
