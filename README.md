@@ -12,11 +12,6 @@
 
 <h4>Some Results (Bazı Sonuçlar)</h4>
 
-<figure>
-<img src="result/IR_00121_RGB_infrared_faces_fever.jpg" alt="fever detection on the image" width="%100" height=auto></a>
-<figcaption align="justify">(a) Görünürür ışık spektrumunda (RGB) fotoğraf. (b) Kızılötesi (termal) görüntü. (c) RGB resim üzerinde Derin Öğrenme tabanlı yüz tespiti. (d) RGB resim üzerinde tespit edilen yüz bölgelerinin termal resim üzerine aktarılarak orada ilgilenilen bölgede (region of interest - ROI) ateş tespitinin yapılması.</figcaption>
-</figure>
-
 <h5>Baş Eğildikçe Yüz Sıcaklığının Artması</h5>
 
 <figure>
